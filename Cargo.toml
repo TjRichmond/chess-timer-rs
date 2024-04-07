@@ -6,7 +6,9 @@ edition = "2021"
 [dependencies]
 max7219 = "0.4.2"
 
-embassy-stm32 = { version = "0.1.0", features = ["defmt", "unstable-pac", "stm32u575zi", "memory-x" ]  }
+embassy-stm32 = { version = "0.1.0", features = ["defmt", "unstable-pac", "stm32u575zi", "memory-x", "exti", "time-driver-any"]  }
+embassy-executor = { version = "0.5.0", features = ["arch-cortex-m", "executor-thread", "integrated-timers"] }
+embassy-time = {version = "0.3.0", features = ["tick-hz-32_768"] }
 defmt = "0.3.6"
 defmt-rtt = "0.4.0"
 cortex-m = { version = "0.7.7", features = ["critical-section-single-core"]}
@@ -15,3 +17,5 @@ panic-probe = "0.3.1"
 
 [patch.crates-io]
 embassy-stm32 = { git = "https://github.com/embassy-rs/embassy", rev = "bd4cb82945112ecb847456a3b0b04163341e44fd" }
+embassy-executor = { git = "https://github.com/embassy-rs/embassy", rev = "bd4cb82945112ecb847456a3b0b04163341e44fd" }
+embassy-time = { git = "https://github.com/embassy-rs/embassy", rev = "bd4cb82945112ecb847456a3b0b04163341e44fd" }
